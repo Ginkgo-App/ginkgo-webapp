@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Page.Title = "Dashboard";
+}
+
+<div class="row">
+    @foreach (var item in Model.ListUsers)
+    {
+        <div>
+            @item.Username
+        </div>
+    }
+</div>

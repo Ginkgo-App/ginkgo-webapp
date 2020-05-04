@@ -1,6 +1,3 @@
-F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\ginko-webapp.dll.config
-F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\ginko-webapp.dll
-F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\ginko-webapp.pdb
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\roslyn\csc.exe
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\roslyn\csc.exe.config
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\roslyn\csc.rsp
@@ -75,8 +72,6 @@ F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\M
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginko-webapp.csprojAssemblyReference.cache
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginko-webapp.csproj.CoreCompileInputs.cache
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginko-webapp.csproj.CopyComplete
-F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginko-webapp.dll
-F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginko-webapp.pdb
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\System.Net.Http.Formatting.dll
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\System.Net.Http.Formatting.xml
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\EntityFramework.dll
@@ -104,3 +99,8 @@ F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\F
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\Facebook.xml
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\RestSharp.dll
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\RestSharp.xml
+F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\ginkgo-webapp.dll.config
+F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\ginkgo-webapp.dll
+F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\bin\ginkgo-webapp.pdb
+F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginkgo-webapp.dll
+F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Debug\ginkgo-webapp.pdb

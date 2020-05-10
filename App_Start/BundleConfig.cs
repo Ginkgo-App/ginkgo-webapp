@@ -16,6 +16,10 @@ namespace ginko_webapp
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapbundle").Include("~/Scripts/Libraries/Bootstrap/bootstrap.bundle.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/datatable").Include("~/Scripts/Libraries/Datatable/jquery.dataTables.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datatable-bootstrap").Include("~/Scripts/Libraries/Datatable/dataTables.bootstrap4.min.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/Libraries/modernizr-*"));
@@ -25,6 +29,9 @@ namespace ginko_webapp
             bundles.Add(new StyleBundle("~/fontawesome/css").Include("~/Content/Libraries/FontAwesome/all.min.css"));
 
             bundles.Add(new StyleBundle("~/bootstrap/css").Include("~/Content/Libraries/Bootstrap/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/datatable/css").Include("~/Content/Libraries/Datatable/dataTables.bootstrap4.min.css"));
+
 
             // Admin custom js, css
             bundles.Add(new StyleBundle("~/admin/css").Include("~/Content/style-admin.min.css"));

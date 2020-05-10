@@ -11,7 +11,7 @@ namespace ginko_webapp.Helper
     {
         public RestClient Initial()
         {   
-            return new RestClient("https://ginkgo-webapi.herokuapp.com/");
+            return new RestClient("https://micro-api-core.herokuapp.com/api/v1/");
         }
     }
 }

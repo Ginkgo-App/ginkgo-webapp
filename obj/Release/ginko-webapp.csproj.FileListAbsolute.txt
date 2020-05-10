@@ -103,3 +103,4 @@ F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\R
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Release\ginko-webapp.csproj.CopyComplete
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Release\ginko-webapp.dll
 F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Release\ginko-webapp.pdb
+F:\SoftwareEngineeringCourses\N4HK2_DOTNET\Project\SourceCode\ginko-webapp\obj\Release\ginko-webapp.csprojAssemblyReference.cache

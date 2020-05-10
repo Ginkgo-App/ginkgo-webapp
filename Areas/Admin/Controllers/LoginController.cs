@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 // using namespace for same libraries
 using UserModel = ginko_webapp.Models.UserModel;
 using HttpCookie = System.Web.HttpCookie;
+using Newtonsoft.Json.Linq;
 
 namespace ginko_webapp.Areas.Admin.Controllers
 {
@@ -66,25 +67,28 @@ namespace ginko_webapp.Areas.Admin.Controllers
                 var request = new RestRequest("users/authenticate", Method.POST);
                 request.AddHeader("Content-Type", "application/json");
                 request.AddJsonBody( new {
-                        username = model.Email,
-                        password = model.Password
+                        Password = model.Password,
+                        Email = model.Email  
                     });
                 
                 IRestResponse response = client.Execute(request);
 
                 if (response.IsSuccessful)
                 {
-                    UserModel userModel = new UserModel();
-                    userModel = JsonConvert.DeserializeObject<UserModel>(response.Content);
-
+                    string decode = Server.UrlDecode(response.Content);
+                    // UserModel userModel = new UserModel();
+                    dynamic result = JsonConvert.DeserializeObject(response.Content);
+                    result = JsonConvert.DeserializeObject(result);
+                    // dynamic result = JObject.Parse(response.Content);
                     // Store access token and user data to session
-                    Session["admin"] = userModel;
+                    // Session["admin"] = userModel;
 
                     // If check remember store refresh token
                     if (model.IsRemember)
                     {
-
+                        
                     }
+
                     return RedirectToAction("Index", "Dashboard");
                 }
                 else

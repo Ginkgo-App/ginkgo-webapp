@@ -75,13 +75,27 @@ namespace ginko_webapp.Areas.Admin.Controllers
 
                 if (response.IsSuccessful)
                 {
-                    string decode = Server.UrlDecode(response.Content);
-                    // UserModel userModel = new UserModel();
                     dynamic result = JsonConvert.DeserializeObject(response.Content);
-                    result = JsonConvert.DeserializeObject(result);
-                    // dynamic result = JObject.Parse(response.Content);
-                    // Store access token and user data to session
-                    // Session["admin"] = userModel;
+
+                    if(result.ErrorCode != 0)
+                    {
+                        ViewBag.error = result.Message;
+                        return RedirectToAction("Index", "Login");
+                    }
+
+                    // Call api to get authentication user info
+                    request = new RestRequest("users/me", Method.GET);
+                    request.AddHeader("Authorization", "Bearer " + result.Data[0].Token);
+                    response = client.Execute(request);
+                    if(response.IsSuccessful)
+                    {
+                        result = JsonConvert.DeserializeObject(response.Content);
+                        Session["admin"] = result.Data[0];
+                    }
+
+                    // Store access token and user to session
+                    
+                    Session["token"] = result.Data[0].Token;
 
                     // If check remember store refresh token
                     if (model.IsRemember)

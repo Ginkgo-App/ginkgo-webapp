@@ -24,6 +24,7 @@
     <ActiveDebugTarget>
     </ActiveDebugTarget>
     <NameOfLastUsedPublishProfile>ginkgowebapp - Web Deploy</NameOfLastUsedPublishProfile>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

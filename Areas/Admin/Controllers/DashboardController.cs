@@ -21,25 +21,14 @@ namespace ginko_webapp.Areas.Admin.Controllers
         // GET: Admin/Dashboard
         public ActionResult Index()
         {
-            if (Session["admin"] == null)
+            if (Session["token"] == null)
             {
                 return RedirectToAction("Index", "Login");
             }
 
-            UserModel admin = (UserModel)Session["admin"];
-
-            // Call api to get list users
-            var client = connector.Initial();
-            client.Timeout = -1;
-            var request = new RestRequest("users", Method.GET);
-            request.AddHeader("Authorization", "Bearer " + admin.Token);
-            IRestResponse response = client.Execute(request);
-
-            List<UserModel> usersList = JsonConvert.DeserializeObject<List<UserModel>>(response.Content);
+            string token = Session["token"].ToString();
 
             DashboardViewModel model = new DashboardViewModel();
-            model.ListUsers = usersList;
-            model.Admin = admin;
 
             return View(model);
         }

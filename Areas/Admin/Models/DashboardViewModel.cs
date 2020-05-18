@@ -8,7 +8,6 @@ namespace ginko_webapp.Areas.Admin.Models
 {
     public class DashboardViewModel : BaseViewModel
     {
-        // Add user list for example
-        public List<UserModel> ListUsers { get; set; }
+
     }
 }

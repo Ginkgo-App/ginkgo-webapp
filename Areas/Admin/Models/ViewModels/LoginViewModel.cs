@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ginko_webapp.Areas.Admin.Models
+namespace ginko_webapp.Areas.Admin.Models.ViewModels
 {
     public class LoginViewModel
     {

@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 
-namespace ginko_webapp.Areas.Admin.Models
+namespace ginko_webapp.Areas.Admin.Models.ObjectModels
 {
     public class UserModel
     {
@@ -163,6 +163,7 @@ namespace ginko_webapp.Areas.Admin.Models
             }
             set
             {
+                //this.birthday = (value != null) ? value : "";
                 if (value == null)
                 {
                     this.birthday = "";

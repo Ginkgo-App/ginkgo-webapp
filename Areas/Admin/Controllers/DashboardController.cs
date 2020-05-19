@@ -1,6 +1,5 @@
-﻿using ginko_webapp.Areas.Admin.Models;
+﻿using ginko_webapp.Areas.Admin.Models.ViewModels;
 using ginko_webapp.Helper;
-using ginko_webapp.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using System;

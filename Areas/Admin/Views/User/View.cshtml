@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Page.Title = "Users";
+}
+
+@using ginko_webapp.Areas.Admin.Models.ObjectModels
+@{ 
+    var user = (UserModel)ViewData["user"];
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Editing:&nbsp;@user.Name</h6>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="@user.Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="@user.Email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="@user.PhoneNumber">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birthday" value="2020-10-10">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="job">Job</label>
+                    <input type="text" class="form-control" id="job" name="job" placeholder="Job" value="@user.Job">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="gender">Gender</label>
+                    <select id="gender" class="form-control" name="gender">
+                        <option value="-1" selected>Choose...</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="0">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="@user.Address">
+            </div>
+            <div class="form-group">
+                <label for="slogan">Slogan</label>
+                <textarea class="form-control" id="slogan" name="slogan" placeholder="Slogan">@user.Slogan</textarea>
+            </div>
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea class="form-control" id="bio" name="bio" placeholder="Bio">@user.Bio</textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    
+}

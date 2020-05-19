@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Page.Title = "Users";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Users list</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered datatable" id="usersDataTable" width="100%" cellspacing="0" data-controller="@Url.Action("GetUsers", "UserAjax")">
+                <thead>
+                    <tr>
+                        <th name="Name">Name</th>
+                        <th name="Email">Email</th>
+                        <th name="Phone">Phone</th>
+                        <th name="Birthday">Birthday</th>
+                        <th name="Gender">Gender</th>
+                        <th name="Address">Address</th>
+                        <th name="Role">Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Areas/Admin/Resources/UsersListView.js"></script>
+}

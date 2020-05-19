@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Security.Cryptography;
 using System.Text;
-
-using ginko_webapp.Models;
 using ginko_webapp.Areas.Admin.Models;
 using System.Web.Security;
 using System.Threading.Tasks;
@@ -17,11 +15,9 @@ using System.Configuration;
 using System.Net.Http.Formatting;
 using RestSharp;
 using Newtonsoft.Json;
-
-// using namespace for same libraries
-using UserModel = ginko_webapp.Models.UserModel;
-using HttpCookie = System.Web.HttpCookie;
-using Newtonsoft.Json.Linq;
+using ginko_webapp.Areas.Admin.Models.ViewModels;
+using ginko_webapp.Areas.Admin.Models.ObjectModels;
+using ginko_webapp.Areas.Admin.Models.APIResultModels;
 
 namespace ginko_webapp.Areas.Admin.Controllers
 {
@@ -75,9 +71,11 @@ namespace ginko_webapp.Areas.Admin.Controllers
 
                 if (response.IsSuccessful)
                 {
-                    dynamic result = JsonConvert.DeserializeObject(response.Content);
+                    AuthenticationAPIResultModel result = JsonConvert.DeserializeObject<AuthenticationAPIResultModel>(response.Content);
+                    // Store access token and user to session
+                    Session["token"] = result.Data[0].Token;
 
-                    if(result.ErrorCode != 0)
+                    if (result.ErrorCode != "0")
                     {
                         ViewBag.error = result.Message;
                         return RedirectToAction("Index", "Login");
@@ -89,18 +87,8 @@ namespace ginko_webapp.Areas.Admin.Controllers
                     response = client.Execute(request);
                     if(response.IsSuccessful)
                     {
-                        result = JsonConvert.DeserializeObject(response.Content);
+                        UsersApiResultModel admin = JsonConvert.DeserializeObject<UsersApiResultModel>(response.Content);
                         Session["admin"] = result.Data[0];
-                    }
-
-                    // Store access token and user to session
-                    
-                    Session["token"] = result.Data[0].Token;
-
-                    // If check remember store refresh token
-                    if (model.IsRemember)
-                    {
-                        
                     }
 
                     return RedirectToAction("Index", "Dashboard");
@@ -147,9 +135,8 @@ namespace ginko_webapp.Areas.Admin.Controllers
 
                 UserModel admin = new UserModel();
 
-                admin.Username = me.email;
-                admin.FirstName = me.first_name;
-                admin.LastName = me.last_name;
+                admin.Email = me.email;
+                admin.Name = me.first_name + me.last_name;
 
                 // Call api to store user data to database 
 
@@ -165,6 +152,7 @@ namespace ginko_webapp.Areas.Admin.Controllers
         public ActionResult Logout()
         {
             // Delete admin variable in session
+            Session["token"] = null;
             Session["admin"] = null;
             return RedirectToAction("Index");
         }

@@ -13,6 +13,7 @@
 
     <!-- Custom styles for this template-->
     @Styles.Render("~/admin/css")
+    @Styles.Render("~/datatable/css")
 
     @RenderSection("Styles", required: false)
 </head>
@@ -81,7 +82,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="@Url.Action("Index", "User")">
                     <i class="fas fa-users"></i>
                     <span>Danh sách người dùng</span>
                 </a>
@@ -278,7 +279,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@Model.Admin.Username</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -369,6 +370,8 @@
 
     <!-- Custom scripts for all pages-->
     @Scripts.Render("~/admin/js")
+    @Scripts.Render("~/bundles/datatable")
+    @Scripts.Render("~/bundles/datatable-bootstrap")
 
     <!-- Page level plugins -->
     @RenderSection("Scripts", required: false)

@@ -285,16 +285,16 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Helpers\DatatableHelper.cs" />
     <Compile Include="Areas\Admin\Models\APIResultModels\APIResultModel.cs" />
+    <Compile Include="Areas\Admin\Models\APIResultModels\AuthenticationAPIResultModel.cs" />
     <Compile Include="Areas\Admin\Models\APIResultModels\UsersApiResultModel.cs" />
-    <Compile Include="Areas\Admin\Models\BaseViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\DashboardViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\LoginViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\UserModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\DashboardViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ObjectModels\UserModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\APIConnector.cs" />
-    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +363,7 @@
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\View.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\ginkgowebapp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -522,10 +523,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\ObjectModels\" />
-    <Folder Include="Areas\Admin\Models\ViewModels\" />
     <Folder Include="Areas\Admin\Views\UserAjax\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
     <Folder Include="Scripts\Customs\" />
   </ItemGroup>
   <ItemGroup>

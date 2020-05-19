@@ -12,6 +12,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using ginko_webapp.Areas.Admin.Models.ObjectModels;
 
 namespace ginko_webapp.Areas.Admin.Controllers
 {

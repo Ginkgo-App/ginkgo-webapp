@@ -117,6 +117,36 @@ namespace ginko_webapp.Areas.Admin.Controllers
             }
             return result;
         }
+
+        public ActionResult DeleteUser(int userId)
+        {
+            JsonResult result = new JsonResult();
+            try
+            {
+                // call api to get users data
+                string token = Session["token"].ToString();
+                var client = connector.Initial();
+                client.Timeout = -1;
+                var request = new RestRequest("admin/users/" + userId, Method.DELETE);
+                request.AddHeader("Authorization", "Bearer " + token);
+
+                IRestResponse response = client.Execute(request);
+
+                if(response.IsSuccessful)
+                {
+                    return Json(new { Status = "success"});
+                }
+                else
+                {
+                    return Json(new { Status = "false" });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result;
+        }
     }
 
     public class DataTableData

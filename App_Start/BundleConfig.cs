@@ -36,6 +36,27 @@ namespace ginko_webapp
             // Admin custom js, css
             bundles.Add(new StyleBundle("~/admin/css").Include("~/Content/style-admin.min.css"));
             bundles.Add(new ScriptBundle("~/admin/js").Include("~/Scripts/script-admin.min.js"));
+
+            // Date Picker
+            bundles.Add(new ScriptBundle("~/datepicker/js").Include("~/Scripts/Libraries/DatePicker/bootstrap-datepicker.min.js")); 
+            bundles.Add(new StyleBundle("~/datepicker/css").Include("~/Content/Libraries/DatePicker/bootstrap-datepicker3.min.css"));
+
+            // Avt Picker
+            bundles.Add(new ScriptBundle("~/avtpicker/js").Include("~/Scripts/Customs/AvatarPicker.js"));
+            bundles.Add(new StyleBundle("~/avtpicker/css").Include("~/Content/Customs/AvatarPicker.css"));
+
+            // Select2
+            bundles.Add(new ScriptBundle("~/select2/js").Include("~/Scripts/Libraries/Select2/select2.min.js"));
+            bundles.Add(new StyleBundle("~/select2/css").Include("~/Content/Libraries/Select2/select2.min.css", 
+                "~/Content/Libraries/Select2/select2-bootstrap.min.css"));
+
+            // Bootstrap file input
+            bundles.Add(new ScriptBundle("~/file-input/js").Include("~/Scripts/Libraries/Bootstrap-FileInput/fileinput.min.js",
+                "~/Scripts/Libraries/Bootstrap-FileInput/themes/fas/theme.min.js"));
+            bundles.Add(new StyleBundle("~/file-input/css").Include("~/Content/Libraries/Bootstrap-FileInput/fileinput.min.css"));
+
+            // Bootstrap Dynamic Table
+            bundles.Add(new ScriptBundle("~/bstable/js").Include("~/Scripts/Libraries/crud-bstable/bstable.js"));
         }
     }
 }

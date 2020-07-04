@@ -71,15 +71,16 @@ namespace ginko_webapp.Areas.Admin.Controllers
 
                 if (response.IsSuccessful)
                 {
-                    AuthenticationAPIResultModel result = JsonConvert.DeserializeObject<AuthenticationAPIResultModel>(response.Content);
-                    // Store access token and user to session
-                    Session["token"] = result.Data[0].Token;
-
-                    if (result.ErrorCode != "0")
+                    AuthenticationApiResultModel result = JsonConvert.DeserializeObject<AuthenticationApiResultModel>(response.Content);
+                    
+                    if (result.ErrorCode != 0)
                     {
                         ViewBag.error = result.Message;
                         return RedirectToAction("Index", "Login");
                     }
+
+                    // Store access token and user to session
+                    Session["token"] = result.Data[0].Token;
 
                     // Call api to get authentication user info
                     request = new RestRequest("users/me", Method.GET);
@@ -91,7 +92,7 @@ namespace ginko_webapp.Areas.Admin.Controllers
                         Session["admin"] = result.Data[0];
                     }
 
-                    return RedirectToAction("Index", "Dashboard");
+                    return RedirectToAction("Index", "TourInfo");
                 }
                 else
                 {

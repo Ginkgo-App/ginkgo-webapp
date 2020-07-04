@@ -1,0 +1,132 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Page.Title = "Users";
+}
+
+
+@section Styles{
+    @Styles.Render("~/datepicker/css")
+    @Styles.Render("~/avtpicker/css")
+}
+
+@model ginko_webapp.Areas.Admin.Models.ViewModels.UserCreateViewModel
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Create New User</h6>
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("Create", "User")" method="post">
+            @Html.AntiForgeryToken()
+            <div class="form-row">
+                <div class="col-md-4 center-content">
+                    <div class="avt-wrapper">
+                        <div class="circle-avt">
+                            <img class="profile-pic" src="~/Areas/Admin/Img/avatar-default.png">
+                        </div>
+                        <div class="p-image">
+                            <i class="fa fa-camera upload-button"></i>
+                            <input class="file-upload-avt" type="file" accept="image/*" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            @Html.LabelFor(model => model.Email)
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.Role)
+                            @Html.DropDownListFor(
+                                    model => model.Role,
+                                    new List<SelectListItem>{
+                                        new SelectListItem{ Text="Choose...", Value = "" },
+                                        new SelectListItem{ Text="Admin", Value = "admin" },
+                                        new SelectListItem{ Text="User", Value = "user" },
+                                        new SelectListItem{ Text="Creator", Value = "creator" }
+                                    },
+                                    new { @class = "form-control", @selected_data = "" }
+                                )
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            @Html.LabelFor(model => model.Password)
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            @Html.LabelFor(model => model.Name)
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.Gender)
+                            @Html.DropDownListFor(
+                                    model => model.Gender,
+                                    new List<SelectListItem>{
+                                        new SelectListItem{ Text="Choose...", Value = "" },
+                                        new SelectListItem{ Text="Male", Value = "male" },
+                                        new SelectListItem{ Text="Female", Value = "female" },
+                                        new SelectListItem{ Text="Orther", Value = "orther" }
+                                    },
+                                    new { @class = "form-control", @selected_data = "" }
+                                )
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.PhoneNumber)
+                    @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Birthday)
+                    @Html.TextBoxFor(model => model.Birthday, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger", data_provide = "datepicker" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.Job)
+                    @Html.TextBoxFor(model => model.Job, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Job, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address)
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Slogan)
+                @Html.TextAreaFor(model => model.Slogan, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Slogan, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Bio)
+                @Html.TextAreaFor(model => model.Bio, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Bio, "", new { @class = "text-danger" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/datepicker/js")
+    @Scripts.Render("~/avtpicker/js")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[name="Birthday"]').datepicker();
+        });
+    </script>
+}

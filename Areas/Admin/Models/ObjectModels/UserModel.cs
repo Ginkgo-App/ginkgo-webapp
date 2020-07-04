@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -163,22 +164,14 @@ namespace ginko_webapp.Areas.Admin.Models.ObjectModels
             }
             set
             {
-                //this.birthday = (value != null) ? value : "";
                 if (value == null)
                 {
                     this.birthday = "";
                 }
                 else
                 {
-                    DateTime convertDate;
-                    if (DateTime.TryParseExact(value, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out convertDate))
-                    {
-                        this.birthday = convertDate.ToString();
-                    }
-                    else
-                    {
-                        this.birthday = "";
-                    }
+                    DateTime convertDate = DateTime.Parse(value.ToString());
+                    this.birthday = convertDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
                 }
             }
         }
@@ -190,19 +183,22 @@ namespace ginko_webapp.Areas.Admin.Models.ObjectModels
             }
             set
             {
-                if (value == null)
+                if(value == null)
                 {
-                    this.gender = "NaN";
+                    this.gender = "";
                 }
-                else if (value == "1")
+                else if (value == "1" || value.ToLower() == "male")
                 {
                     this.gender = "male";
                 }
-                else if (value == "0")
+                else if (value == "0" || value.ToLower() == "female")
                 {
                     this.gender = "female";
                 }
-
+                else if (value == "2" || value.ToLower() == "orther")
+                {
+                    this.gender = "orther";
+                }
             }
         }
         public string Address
@@ -225,7 +221,7 @@ namespace ginko_webapp.Areas.Admin.Models.ObjectModels
             }
             set
             {
-                this.role = (value != null) ? value : "";
+                this.role = (value != null) ? value.ToLower() : "";
 
             }
         }

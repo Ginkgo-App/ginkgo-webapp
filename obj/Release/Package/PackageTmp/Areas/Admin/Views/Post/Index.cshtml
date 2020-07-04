@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Page.Title = "Posts";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 clearfix">
+        <h6 class="font-weight-bold text-primary float-left">Posts list</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <input type="hidden" name="deletePostController" value="@Url.Action("DeletePost", "PostAjax")" />
+            <input type="hidden" name="getPostsController" value="@Url.Action("GetPosts", "PostAjax")" />
+            <table class="table table-bordered datatable" id="postsDataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th name="Id">Id</th>
+                        <th name="Content">Content</th>
+                        <th name="Author">Author</th>
+                        <th name="Rating">Rating</th>
+                        <th name="TotalLike">Total Like</th>
+                        <th name="TotalComment">Total Comment</th>
+                        <th name="Delete"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Delete User Modal-->
+<div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePostModalLabel">Confirm to delete</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" placeId="">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Areas/Admin/Resources/PostsListView.js"></script>
+}

@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Page.Title = "Tour Info";
+}
+
+
+@section Styles{
+}
+
+@model ginko_webapp.Areas.Admin.Models.ViewModels.TourInfoEditViewModel
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 clearfix">
+        <h6 class="font-weight-bold text-primary float-left">Detail: @Model.Name</h6>
+        <a href="@Url.Action("Edit", "TourInfo", new { id = Model.Id})" class="float-right btn bg-primary text-gray-100">Edit</a>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="form-group col-sm-6">
+                @Html.LabelFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @disabled = "disabled" })
+            </div>
+            <div class="form-group col-sm-6">
+                @Html.LabelFor(model => model.CreateBy)
+                @Html.TextBoxFor(model => model.CreateBy, new { @class = "form-control", @disabled = "disabled" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                @Html.LabelFor(model => model.StartPlace)
+                @Html.DropDownListFor(model => model.StartPlace, (IEnumerable<SelectListItem>)ViewBag.PlacesPicklist, new { @class = "select2 form-control", @disabled = "disabled" })
+            </div>
+            <div class="form-group col-sm-6">
+                @Html.LabelFor(model => model.DestinatePlace)
+                @Html.DropDownListFor(model => model.DestinatePlace, (IEnumerable<SelectListItem>)ViewBag.PlacesPicklist, new { @class = "select2 form-control", @disabled = "disabled" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 form-group">
+                @Html.TextBoxFor(model => model.FileImages, new { @type = "file", @id = "imgFile", @multiple = "multiple", @data_show_upload = "false", @data_show_caption = "true", @data_msg_placeholder = "Select {files} for upload...", @disabled = "disabled" })
+                @Html.ValidationMessageFor(model => model.FileImages, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 clearfix">
+        <h6 class="font-weight-bold text-primary float-left">Tours List</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <input type="hidden" name="deleteTourController" value="@Url.Action("DeleteTour", "TourAjax")" />
+            <input type="hidden" name="getToursController" value="@Url.Action("GetTours", "TourAjax")" />
+            <input type="hidden" name="tourInfoId" value="@Model.Id" />
+            <table class="table table-bordered datatable" id="toursDataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th name="Name">Name</th>
+                        <th name="StartDay">StartDay</th>
+                        <th name="EndDay">EndDay</th>
+                        <th name="TotalDay">TotalDay</th>
+                        <th name="TotalNight">TotalNight</th>
+                        <th name="Price">Price</th>
+                        <th name="Edit"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Delete User Modal-->
+<div class="modal fade" id="deleteTourModal" tabindex="-1" role="dialog" aria-labelledby="deleteTourModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteTourModalLabel">Confirm to delete</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" placeId="">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="~/Areas/Admin/Resources/ToursListView.js"></script>
+    <script>
+         $("#imgFile").fileinput({
+            "theme": "fas",
+            "initialPreview": JSON.parse('@Html.Raw(Json.Encode(Model.Images))'),
+            "initialPreviewAsData": true,
+         });
+    </script>
+}

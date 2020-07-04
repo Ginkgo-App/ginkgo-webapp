@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ginko_webapp.Areas.Admin.Models.APIResultModels
 {
-    public class AuthenticationAPIResultModel : APIResultModel
+    public class AuthenticationApiResultModel : APIResultModel
     {
         public List<Data> Data { get; set; }
     }

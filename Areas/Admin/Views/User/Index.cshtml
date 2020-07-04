@@ -4,12 +4,15 @@
 }
 
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Users list</h6>
+    <div class="card-header py-3 clearfix">
+        <h6 class="font-weight-bold text-primary float-left">Users list</h6>
+        <a href="@Url.Action("Create", "User")" class="float-right btn bg-primary text-gray-100">Add new users</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered datatable" id="usersDataTable" width="100%" cellspacing="0" data-controller="@Url.Action("GetUsers", "UserAjax")">
+            <input type="hidden" name="deleteUserController" value="@Url.Action("DeleteUser", "UserAjax")" />
+            <input type="hidden" name="getUsersController" value="@Url.Action("GetUsers", "UserAjax")" />
+            <table class="table table-bordered datatable" id="usersDataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th name="Name">Name</th>
@@ -24,9 +27,27 @@
                     </tr>
                 </thead>
                 <tbody>
-
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+
+<!-- Delete User Modal-->
+<div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteUserModalLabel">Confirm to delete</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" userId="">Confirm</button>
+            </div>
         </div>
     </div>
 </div>

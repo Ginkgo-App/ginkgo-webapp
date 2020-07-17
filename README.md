@@ -1,10 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -37,9 +30,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This Website is part of our Travel Social Network - GINKGO. The main task of this website as a tool is to enable us to manage user infomations and tracking their activities. 
 
 
@@ -73,13 +63,13 @@ git clone https://github.com/Ginkgo-App/ginkgo-webapp.git
 ## Usage
 | LOGIN |
 | ----- |
-| <img alt="Login" src="Git Images/Login.PNG" height="520" width="100%"> |
+| <img alt="Login" src="Git Images/Login.PNG" width="100%"> |
 | MANAGE PLACE |
-| <img alt="Place" src="Git Images/Place-ListView.png" height="520" width="100%"> |
+| <img alt="Place" src="Git Images/Place-ListView.png" width="100%"> |
 | MANAGE TOUR INFO |
-| <img alt="Tour Info" src="Git Images/TourInfo-DetailView.PNG" height="520" width="100%"> |
+| <img alt="Tour Info" src="Git Images/TourInfo-DetailView.PNG" width="100%"> |
 | MANAGE USER |
-| <img alt="User" src="Git Images/User-EditView.png" height="520" width="100%"> |
+| <img alt="User" src="Git Images/User-EditView.png" width="100%"> |
 
 <!-- CONTACT -->
 ## Contact
@@ -103,18 +93,3 @@ git clone https://github.com/Ginkgo-App/ginkgo-webapp.git
 * <a href="https://restfulapi.net/">RESTFUL API Document</a>
 * <a href="https://jwt.io/">Json Web Token Docment</a>
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew

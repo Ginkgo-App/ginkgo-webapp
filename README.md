@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Ginkgo-App/ginkgo-webapp.git">
-    <img src="Git Images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/Ginkgo-App/ginkgo_mobile/blob/master/assets/images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">GINKGO WEBAPP</h3>
@@ -73,13 +73,13 @@ git clone https://github.com/Ginkgo-App/ginkgo-webapp.git
 ## Usage
 | LOGIN |
 | ----- |
-| <img alt="Login" src="Git Images/Login.PNG" height="540" width="100%"> |
+| <img alt="Login" src="Git Images/Login.PNG" height="520" width="100%"> |
 | MANAGE PLACE |
-| <img alt="Place" src="Git Images/Place-ListView.png" height="540" width="100%"> |
+| <img alt="Place" src="Git Images/Place-ListView.png" height="520" width="100%"> |
 | MANAGE TOUR INFO |
-| <img alt="Tour Info" src="Git Images/TourInfo-DetailView.PNG" height="540" width="100%"> |
+| <img alt="Tour Info" src="Git Images/TourInfo-DetailView.PNG" height="520" width="100%"> |
 | MANAGE USER |
-| <img alt="User" src="Git Images/User-EditView.png" height="540" width="100%"> |
+| <img alt="User" src="Git Images/User-EditView.png" height="520" width="100%"> |
 
 <!-- CONTACT -->
 ## Contact
@@ -99,9 +99,9 @@ git clone https://github.com/Ginkgo-App/ginkgo-webapp.git
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []() </a href="https://dotnet.microsoft.com/apps/aspnet/mvc">Microsoft ASP.NET MVC Pattern Document</a>
-* []() </a href="https://restfulapi.net/">RESTFUL API Document</a>
-* []() </a href="https://jwt.io/">Json Web Token Docment</a>
+* <a href="https://dotnet.microsoft.com/apps/aspnet/mvc">Microsoft ASP.NET MVC Pattern Document</a>
+* <a href="https://restfulapi.net/">RESTFUL API Document</a>
+* <a href="https://jwt.io/">Json Web Token Docment</a>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->

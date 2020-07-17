@@ -8,8 +8,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Ginkgo-App/ginkgo-webapp.git">
+    <img src="Git Images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">GINKGO WEBAPP</h3>
@@ -71,10 +71,15 @@ git clone https://github.com/Ginkgo-App/ginkgo-webapp.git
 ```
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+| LOGIN |
+| ----- |
+| <img alt="Login" src="Git Images/Login.PNG" height="540" width="100%"> |
+| MANAGE PLACE |
+| <img alt="Place" src="Git Images/Place-ListView.png" height="540" width="100%"> |
+| MANAGE TOUR INFO |
+| <img alt="Tour Info" src="Git Images/TourInfo-DetailView.PNG" height="540" width="100%"> |
+| MANAGE USER |
+| <img alt="User" src="Git Images/User-EditView.png" height="540" width="100%"> |
 
 <!-- CONTACT -->
 ## Contact
